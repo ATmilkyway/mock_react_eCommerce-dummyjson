@@ -1,5 +1,6 @@
 import { GridItem, SimpleGrid } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
+import ProductsGrid from "./components/ProductsGrid";
 
 const App = () => {
   return (
@@ -29,7 +30,7 @@ const App = () => {
         SideBar
       </GridItem>
       <GridItem area="main" bg="green.100">
-        main
+        <ProductsGrid />
       </GridItem>
     </SimpleGrid>
   );
