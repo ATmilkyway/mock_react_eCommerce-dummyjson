@@ -18,6 +18,10 @@ const config = defineConfig({
           dark_brand: { value: "#151515" },
         },
       },
+      fonts: {
+        heading: { value: "Outfit, sans-serif" },
+        body: { value: "Outfit, sans-serif" },
+      },
     },
   },
 });

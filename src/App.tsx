@@ -1,4 +1,5 @@
-import { Button, GridItem, HStack, SimpleGrid } from "@chakra-ui/react";
+import { GridItem, SimpleGrid } from "@chakra-ui/react";
+import NavBar from "./components/NavBar";
 
 const App = () => {
   return (
@@ -18,7 +19,7 @@ const App = () => {
       overflow="hidden"
     >
       <GridItem area="nav" bg="orange.200">
-        Nav
+        <NavBar />
       </GridItem>
       <GridItem
         area="side"
