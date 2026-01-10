@@ -14,11 +14,11 @@ const App = () => {
         base: "1fr",
         md: "200px 1fr",
       }}
-      height="100dvh"
-      bg="gray.800"
-      overflow="hidden"
+      // height="100dvh"
+      // bg="gray.800"
+      // overflow="hidden"
     >
-      <GridItem area="nav" bg="orange.200">
+      <GridItem area="nav">
         <NavBar />
       </GridItem>
       <GridItem

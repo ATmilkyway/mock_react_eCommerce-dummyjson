@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+  <!-- Optional circular badge -->
+  <circle cx="50" cy="50" r="40" fill="#000" opacity="0.1"/>
+
+  <!-- "24" bold and modern -->
+  <text x="40" y="70" font-family="Outfit, Arial, sans-serif" font-weight="800" font-size="60" fill="#000">
+    24
+  </text>
+
+  <!-- "Shop" stylish and slightly spaced -->
+  <text x="120" y="70" font-family="Outfit, Arial, sans-serif" font-weight="600" font-size="60" fill="#000" letter-spacing="2">
+    Shop
+  </text>
+
+  <!-- Underline for style -->
+  <line x1="40" y1="80" x2="260" y2="80" stroke="#000" stroke-width="3" stroke-linecap="round" />
+</svg>
