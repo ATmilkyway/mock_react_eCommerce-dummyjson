@@ -6,8 +6,11 @@ const axiosInstance = axios.create({
 
 class APIClient<T> {
   endPoint: string;
+  // select: (response: R) => T[];
+
   constructor(endPoint: string) {
     this.endPoint = endPoint;
+    // this.select = select;
   }
 
   getAll = () => {
