@@ -19,8 +19,8 @@ const config = defineConfig({
         },
       },
       fonts: {
-        heading: { value: "Outfit, sans-serif" },
-        body: { value: "Outfit, sans-serif" },
+        heading: { value: "Outfit, system-ui, sans-serif", },
+        body: { value: "Outfit, system-ui, sans-serif", },
       },
     },
   },
