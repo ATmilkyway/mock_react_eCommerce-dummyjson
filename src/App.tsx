@@ -1,6 +1,7 @@
 import { GridItem, SimpleGrid } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import ProductsGrid from "./components/ProductsGrid";
+import CatagoriesList from "./components/CatagoriesList";
 
 const App = () => {
   return (
@@ -23,12 +24,8 @@ const App = () => {
       <GridItem area="nav" position="sticky" top="0" bg="white" zIndex={100}>
         <NavBar />
       </GridItem>
-      <GridItem
-        area="side"
-        bg="blue.200"
-        display={{ base: "none", md: "block" }}
-      >
-        SideBar
+      <GridItem area="side" display={{ base: "none", md: "block" }}>
+        <CatagoriesList />
       </GridItem>
       <GridItem area="main" padding={5} position="relative">
         <ProductsGrid />

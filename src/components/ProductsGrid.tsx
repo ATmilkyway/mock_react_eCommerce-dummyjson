@@ -7,7 +7,6 @@ const ProductsGrid = () => {
   const { data: products, isLoading, error } = useProducts();
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>{error.message}</p>;
-  console.log(products);
   return (
     <>
       <ProductHeading />
