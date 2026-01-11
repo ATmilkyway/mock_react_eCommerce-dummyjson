@@ -15,11 +15,12 @@ const App = () => {
         base: "1fr",
         md: "200px 1fr",
       }}
-      // height="100dvh"
+      height="100dvh"
       // bg="gray.800"
-      // overflow="hidden"
+      overflow="auto"
+      position="relative"
     >
-      <GridItem area="nav">
+      <GridItem area="nav" >
         <NavBar />
       </GridItem>
       <GridItem

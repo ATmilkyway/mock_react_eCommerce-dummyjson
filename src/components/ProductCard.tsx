@@ -1,30 +1,38 @@
 import { Button, Card, Image, Text } from "@chakra-ui/react";
-interface Product {
+import type Product from "@/entities/Product";
+
+interface Props {
   product: Product;
 }
 
-const ProductCard = ({ product }: Product) => {
+const ProductCard = ({ product }: Props) => {
   return (
     <>
-      <Card.Root maxW="sm" overflow="hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-          alt="Green double couch with wooden legs"
-        />
+      <Card.Root
+        maxW="sm"
+        overflow="hidden"
+        _hover={{
+          cursor: "pointer",
+          transform: "scale(1.02)",
+        }}
+        transition="transform 0.15s ease-in-out"
+      >
+        <Image src={product.images[0]} alt={product.images[0]} />
         <Card.Body gap="2">
-          <Card.Title>Living room Sofa</Card.Title>
-          <Card.Description>
-            This sofa is perfect for modern tropical spaces, baroque inspired
-            spaces.
-          </Card.Description>
-          <Text
+          <Card.Title fontSize={16} fontWeight="400">
+            {product.title}
+          </Card.Title>
+          {/* <Card.Description>
+           {product.description}
+          </Card.Description> */}
+          {/* <Text
             textStyle="2xl"
             fontWeight="medium"
             letterSpacing="tight"
             mt="2"
           >
             $450
-          </Text>
+          </Text> */}
         </Card.Body>
         <Card.Footer gap="2">
           <Button variant="solid">Buy now</Button>
