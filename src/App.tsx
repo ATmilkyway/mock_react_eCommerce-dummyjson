@@ -24,7 +24,17 @@ const App = () => {
       <GridItem area="nav" position="sticky" top="0" bg="white" zIndex={100}>
         <NavBar />
       </GridItem>
-      <GridItem area="side" display={{ base: "none", md: "block" }}>
+      <GridItem
+        area="side"
+        display={{ base: "none", md: "block" }}
+        position="sticky"
+        top="100px"
+        height="80dvh"
+        overflowY="scroll"
+        paddingX={5}
+        paddingBottom={5}
+        paddingTop={5}
+      >
         <CatagoriesList />
       </GridItem>
       <GridItem area="main" padding={5} position="relative">
