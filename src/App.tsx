@@ -20,7 +20,7 @@ const App = () => {
       overflow="auto"
       position="relative"
     >
-      <GridItem area="nav" >
+      <GridItem area="nav" position="sticky" top="0" bg="white" zIndex={100}>
         <NavBar />
       </GridItem>
       <GridItem
