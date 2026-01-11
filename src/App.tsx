@@ -30,7 +30,7 @@ const App = () => {
       >
         SideBar
       </GridItem>
-      <GridItem area="main" bg="green.100">
+      <GridItem area="main" padding={5} position="relative">
         <ProductsGrid />
       </GridItem>
     </SimpleGrid>

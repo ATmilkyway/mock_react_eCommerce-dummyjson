@@ -1,6 +1,7 @@
 import useProducts from "@/hooks/useProducts";
-import { SimpleGrid, Text } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import ProductCard from "./ProductCard";
+import ProductHeading from "./ProductHeading";
 
 const ProductsGrid = () => {
   const { data: products, isLoading, error } = useProducts();
@@ -9,6 +10,7 @@ const ProductsGrid = () => {
   console.log(products);
   return (
     <>
+      <ProductHeading />
       <SimpleGrid
         columns={{
           base: 1,
@@ -18,7 +20,6 @@ const ProductsGrid = () => {
           "2xl": 8,
         }}
         gap={4}
-        padding={5}
       >
         {products?.products?.map((product) => (
           <ProductCard key={product.id} product={product} />
