@@ -1,4 +1,5 @@
 import {
+  Badge,
   Box,
   Button,
   Card,
@@ -8,7 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import type Product from "@/entities/Product";
-import { FaStar } from "react-icons/fa";
+import { FaDollarSign, FaStar } from "react-icons/fa";
 
 interface Props {
   product: Product;
@@ -42,11 +43,20 @@ const ProductCard = ({ product }: Props) => {
           >
             $450
           </Text> */}
-          <Box>
-            <HStack>
-              <FaStar color="red" /> {product.rating}
-            </HStack>
-          </Box>
+          <HStack justifyContent="space-between">
+            <Badge colorPalette="green">
+              <HStack>
+                <FaDollarSign color="red" />
+                {product.price}
+              </HStack>
+            </Badge>
+
+            <Badge colorPalette="red">
+              <HStack>
+                <FaStar color="red" /> {product.rating}
+              </HStack>
+            </Badge>
+          </HStack>
         </Card.Body>
         <Card.Footer gap="2">
           <Button variant="solid">Add to Cart</Button>
