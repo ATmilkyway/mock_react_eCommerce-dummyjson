@@ -1,5 +1,5 @@
 import useCategories from "@/hooks/useCategories";
-import { Box, Heading, Link, Text } from "@chakra-ui/react";
+import { Box, Heading, Link } from "@chakra-ui/react";
 
 const CatagoriesList = () => {
   const { data: catagories } = useCategories();
@@ -11,7 +11,7 @@ const CatagoriesList = () => {
           Categories
         </Heading>
         {catagories?.map((catagory) => (
-          <Link key={catagory.slug} mb={2} display='block'>
+          <Link key={catagory.slug} mb={2} display="block">
             {catagory.name}
           </Link>
         ))}

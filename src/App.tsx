@@ -21,7 +21,14 @@ const App = () => {
       overflow="auto"
       position="relative"
     >
-      <GridItem area="nav" position="sticky" top="0" bg="white" zIndex={100}>
+      <GridItem
+        area="nav"
+        position="sticky"
+        top="0"
+        _dark={{ bg: "black" }}
+        bg="white"
+        zIndex={100}
+      >
         <NavBar />
       </GridItem>
       <GridItem
@@ -34,6 +41,7 @@ const App = () => {
         paddingX={5}
         paddingBottom={5}
         paddingTop={5}
+        scrollbarWidth="thin"
       >
         <CatagoriesList />
       </GridItem>
