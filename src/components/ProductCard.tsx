@@ -30,7 +30,9 @@ const ProductCard = ({ product }: Props) => {
         <Image src={product.thumbnail} alt={product.images[0]} />
         <Card.Body gap="2">
           <Card.Title fontSize={16} fontWeight="400" maxW="300px">
-            <Text truncate>{product.title}</Text>
+            <Text truncate fontWeight="500">
+              {product.title}
+            </Text>
           </Card.Title>
           {/* <Card.Description>
            {product.description}
@@ -43,19 +45,31 @@ const ProductCard = ({ product }: Props) => {
           >
             $450
           </Text> */}
-          <HStack justifyContent="space-between">
+          <HStack justifyContent="space-between" mb={2}>
             <Badge colorPalette="green">
               <HStack>
                 <FaDollarSign color="red" />
                 {product.price}
               </HStack>
             </Badge>
-
             <Badge colorPalette="red">
               <HStack>
                 <FaStar color="red" /> {product.rating}
               </HStack>
             </Badge>
+          </HStack>
+          <HStack mb={2}>
+            <Text fontSize={14}>Category:</Text>
+            <Badge colorPalette="yellow">{product.category}</Badge>
+          </HStack>
+
+          <HStack>
+            <Text fontSize={14}>Tags:</Text>
+            {product.tags.map((t) => (
+              <>
+                <Badge colorPalette="navy">{t}</Badge>
+              </>
+            ))}
           </HStack>
         </Card.Body>
         <Card.Footer gap="2">

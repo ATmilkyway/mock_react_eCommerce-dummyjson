@@ -20,8 +20,8 @@ interface Meta {
 }
 
 export default interface Product {
-  id: number;
-  title: string;
+  id: number; // used
+  title: string; // used
   description: string;
   category: string;
   price: number;
