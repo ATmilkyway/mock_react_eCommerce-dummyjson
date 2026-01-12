@@ -1,5 +1,14 @@
-import { Button, Card, Image, RatingGroup } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Card,
+  HStack,
+  Image,
+  RatingGroup,
+  Text,
+} from "@chakra-ui/react";
 import type Product from "@/entities/Product";
+import { FaStar } from "react-icons/fa";
 
 interface Props {
   product: Product;
@@ -19,8 +28,8 @@ const ProductCard = ({ product }: Props) => {
       >
         <Image src={product.thumbnail} alt={product.images[0]} />
         <Card.Body gap="2">
-          <Card.Title fontSize={16} fontWeight="400">
-            {product.title}
+          <Card.Title fontSize={16} fontWeight="400" maxW="300px">
+            <Text truncate>{product.title}</Text>
           </Card.Title>
           {/* <Card.Description>
            {product.description}
@@ -33,16 +42,11 @@ const ProductCard = ({ product }: Props) => {
           >
             $450
           </Text> */}
-          <RatingGroup.Root
-            allowHalf
-            count={5}
-            value={product.rating}
-            size="sm"
-            colorPalette="red"
-          >
-            <RatingGroup.HiddenInput />
-            <RatingGroup.Control />
-          </RatingGroup.Root>
+          <Box>
+            <HStack>
+              <FaStar color="red" /> {product.rating}
+            </HStack>
+          </Box>
         </Card.Body>
         <Card.Footer gap="2">
           <Button variant="solid">Add to Cart</Button>
