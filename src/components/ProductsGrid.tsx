@@ -22,7 +22,7 @@ const ProductsGrid = () => {
         gap={4}
       >
         {isLoading
-          ? skeletonNumbers.map(() => <CardSkeletons />)
+          ? skeletonNumbers.map((s) => <CardSkeletons key={s} />)
           : products?.products?.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
