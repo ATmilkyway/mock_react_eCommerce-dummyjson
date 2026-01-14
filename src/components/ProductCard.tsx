@@ -66,9 +66,11 @@ const ProductCard = ({ product }: Props) => {
           <HStack>
             <Text fontSize={14}>Tags:</Text>
             {product.tags.map((t) => (
-              <>
-                <Badge colorPalette="navy">{t}</Badge>
-              </>
+              
+                <Badge colorPalette="navy" key={t}>
+                  {t}
+                </Badge>
+               
             ))}
           </HStack>
         </Card.Body>
