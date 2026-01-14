@@ -7,6 +7,7 @@ interface ProductQuery {
 interface ProductQueryStore {
   productQuery: ProductQuery;
   setCategory: (category?: string) => void;
+  reset: () => void;
 }
 
 const useProductsQueryStore = create<ProductQueryStore>((set) => ({
@@ -15,6 +16,10 @@ const useProductsQueryStore = create<ProductQueryStore>((set) => ({
   setCategory: (category) =>
     set({
       productQuery: { category },
+    }),
+  reset: () =>
+    set({
+      productQuery: {},
     }),
 }));
 
