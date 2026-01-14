@@ -1,14 +1,12 @@
+import type Product from "@/entities/Product";
 import {
   Badge,
-  Box,
   Button,
   Card,
   HStack,
   Image,
-  RatingGroup,
-  Text,
+  Text
 } from "@chakra-ui/react";
-import type Product from "@/entities/Product";
 import { FaDollarSign, FaStar } from "react-icons/fa";
 
 interface Props {

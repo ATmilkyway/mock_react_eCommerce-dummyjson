@@ -8,6 +8,7 @@ const useCategories = () =>
   useQuery({
     queryKey: ["catagries"],
     queryFn: apiClient.getAll,
+    staleTime: 5 * 60 * 1000,
   });
 
 export default useCategories;
