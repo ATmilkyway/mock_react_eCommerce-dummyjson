@@ -1,13 +1,23 @@
 import type { ProductsResponse } from "@/entities/Product";
 import APIClient from "@/services/apiClient";
+import useProductsQueryStore from "@/store/useProductsQueryStore";
 import { useQuery } from "@tanstack/react-query";
 
-const apiClient = new APIClient<ProductsResponse>("/products");
+const useProducts = () => {
+  const category = useProductsQueryStore(
+    (s) => s.productQuery.category
+  );
 
-const useProducts = () =>
-  useQuery({
-    queryKey: ["products"],
+  const apiClient = new APIClient<ProductsResponse>(
+    category
+      ? `/products/category/${category}`
+      : "/products"
+  );
+
+  return useQuery({
+    queryKey: ["products", category],
     queryFn: apiClient.getAll,
   });
+};
 
 export default useProducts;
