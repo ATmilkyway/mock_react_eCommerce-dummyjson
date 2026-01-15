@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { type AxiosRequestConfig } from "axios";
 
 const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
@@ -13,8 +13,8 @@ class APIClient<T> {
     // this.select = select;
   }
 
-  getAll = () => {
-    return axiosInstance.get<T>(this.endPoint).then((res) => res.data);
+  getAll = (config: AxiosRequestConfig) => {
+    return axiosInstance.get<T>(this.endPoint, config).then((res) => res.data);
   };
   get = (id: number) => {
     return axiosInstance
