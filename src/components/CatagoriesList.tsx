@@ -5,7 +5,9 @@ import { Box, Heading, Link } from "@chakra-ui/react";
 const CatagoriesList = () => {
   const { data: catagories } = useCategories();
   const setCategory = useProductsQueryStore((s) => s.setCategory);
+  const currentcategory = useProductsQueryStore((s) => s.productQuery.category);
   const reset = useProductsQueryStore((s) => s.reset);
+  console.log(catagories);
   return (
     <>
       <Box>
@@ -20,7 +22,15 @@ const CatagoriesList = () => {
             key={catagory.slug}
             mb={2}
             display="block"
-            onClick={() => setCategory(catagory.slug)}
+            onClick={() => {
+              setCategory(catagory.slug);
+
+              console.log("catagory.name:", catagory.name);
+              console.log("currentcategory:", currentcategory);
+            }}
+            transition='all 0.15s ease'
+            fontWeight={catagory.slug === currentcategory ? "bold" : ""}
+            fontSize={catagory.slug === currentcategory ? "18px" : ""}
           >
             {catagory.name}
           </Link>
