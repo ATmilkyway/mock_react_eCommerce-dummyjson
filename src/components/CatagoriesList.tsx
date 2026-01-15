@@ -5,7 +5,7 @@ import { Box, Heading, Link } from "@chakra-ui/react";
 const CatagoriesList = () => {
   const { data: catagories } = useCategories();
   const setCategory = useProductsQueryStore((s) => s.setCategory);
-  const currentcategory = useProductsQueryStore((s) => s.productQuery.category);
+  const currentCategory = useProductsQueryStore((s) => s.productQuery.category);
   const reset = useProductsQueryStore((s) => s.reset);
   console.log(catagories);
   return (
@@ -14,7 +14,13 @@ const CatagoriesList = () => {
         <Heading fontSize={28} mb={5}>
           Categories
         </Heading>
-        <Link onClick={() => reset()} mb={2}>
+        <Link
+          onClick={() => reset()}
+          mb={2}
+          fontWeight={!currentCategory ? "bold" : "normal"}
+          transition="all 0.15s ease"
+          fontSize={!currentCategory ? "18px" : ""}
+        >
           All Products
         </Link>
         {catagories?.map((catagory) => (
@@ -22,15 +28,10 @@ const CatagoriesList = () => {
             key={catagory.slug}
             mb={2}
             display="block"
-            onClick={() => {
-              setCategory(catagory.slug);
-
-              console.log("catagory.name:", catagory.name);
-              console.log("currentcategory:", currentcategory);
-            }}
-            transition='all 0.15s ease'
-            fontWeight={catagory.slug === currentcategory ? "bold" : ""}
-            fontSize={catagory.slug === currentcategory ? "18px" : ""}
+            onClick={() => setCategory(catagory.slug)}
+            transition="all 0.15s ease"
+            fontWeight={catagory.slug === currentCategory ? "bold" : ""}
+            fontSize={catagory.slug === currentCategory ? "18px" : ""}
           >
             {catagory.name}
           </Link>
