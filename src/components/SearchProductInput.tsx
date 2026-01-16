@@ -16,6 +16,7 @@ const SearchProductInput = () => {
         if (!ref.current) return;
         reset();
         setSearchProducts(ref.current.value.trim() || undefined);
+        ref.current.value = "";
       }}
     >
       <InputGroup width="full" startElement={<LuSearch color="gray.500" />}>
