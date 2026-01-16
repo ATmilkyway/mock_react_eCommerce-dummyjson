@@ -1,16 +1,7 @@
-import {
-  Avatar,
-  Flex,
-  Heading,
-  HStack,
-  IconButton,
-  Input,
-  InputGroup,
-  Text,
-} from "@chakra-ui/react";
+import { Avatar, Flex, HStack, IconButton } from "@chakra-ui/react";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import NavBarLogo from "./NavBarLogo";
-import { LuSearch } from "react-icons/lu";
+import SearchProductInput from "./SearchProductInput";
 
 const NavBar = () => {
   return (
@@ -23,9 +14,7 @@ const NavBar = () => {
       >
         <NavBarLogo />
         {/* search */}
-        <InputGroup startElement={<LuSearch />} maxW="80%">
-          <Input placeholder="Search products" borderRadius="full" />
-        </InputGroup>
+        <SearchProductInput />
         <HStack justifyContent="center">
           <IconButton aria-label="Search database" rounded="full" size="xs">
             <MdOutlineShoppingCart />

@@ -4,7 +4,6 @@ import ProductCard from "./ProductCard";
 import ProductHeading from "./ProductHeading";
 import CardSkeletons from "./CardSkeletons";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useMemo } from "react";
 
 const ProductsGrid = () => {
   const {
@@ -26,7 +25,12 @@ const ProductsGrid = () => {
     <>
       <ProductHeading />
 
-      <Box id="scrollableDiv" height="calc(100vh - 120px)" overflowY="auto" overflowX='hidden'>
+      <Box
+        id="scrollableDiv"
+        height="calc(100vh - 120px)"
+        overflowY="auto"
+        overflowX="hidden"
+      >
         <InfiniteScroll
           dataLength={allProducts.length}
           next={fetchNextPage}

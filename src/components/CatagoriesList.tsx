@@ -7,7 +7,6 @@ const CatagoriesList = () => {
   const setCategory = useProductsQueryStore((s) => s.setCategory);
   const currentCategory = useProductsQueryStore((s) => s.productQuery.category);
   const reset = useProductsQueryStore((s) => s.reset);
-  console.log(catagories);
   return (
     <>
       <Box>
