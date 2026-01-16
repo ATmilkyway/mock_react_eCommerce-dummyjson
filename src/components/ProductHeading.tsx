@@ -1,10 +1,16 @@
 import useProductsQueryStore from "@/store/useProductsQueryStore";
 import { Box, Heading } from "@chakra-ui/react";
+
 const ProductHeading = () => {
-  const category = useProductsQueryStore((c) => c.productQuery.category);
-  const formattedCategory = category
+  const category = useProductsQueryStore((s) => s.productQuery.category);
+  const searchText = useProductsQueryStore((s) => s.productQuery.searchText);
+
+  const title = searchText
+    ? `"${searchText}"`
+    : category
     ? category.charAt(0).toUpperCase() + category.slice(1)
-    : "";
+    : "All";
+
   return (
     <Box
       mb={12}
@@ -15,7 +21,7 @@ const ProductHeading = () => {
       _dark={{ bg: "black" }}
     >
       <Heading fontSize={48} fontWeight="bold" paddingY={5}>
-        {category ? formattedCategory : "All"} Products
+        {title} Products
       </Heading>
     </Box>
   );
